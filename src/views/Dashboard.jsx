@@ -5,13 +5,13 @@ import React from "react";
 export default function Dashboard() {
   return (
     <>
-      <div class="container">
+      <div class="container pt-5">
         <div className="row m-0">
           {/* users */}
-          <div className="col-md-4 my-2 p-3">
-            <div className="cards text-white  bg-success rounded-x p-3 row m-0">
+          <div className="col-md-4 my-2 p-3 ">
+            <div className="cards text-white  bg-success rounded-x shadow p-3 py-5 row m-0">
               <div className="col-5">
-                <div className="heads">
+                <div className="heads ">
                   <h4>Users</h4>
                 </div>
                 <div className="body">
@@ -26,7 +26,7 @@ export default function Dashboard() {
 
           {/* available matches */}
           <div className="col-md-4 my-2 p-3">
-            <div className="cards text-white  bg-danger rounded-x p-3 row m-0">
+            <div className="cards text-white  bg-danger rounded-x py-5 p-3 shadow row m-0">
               <div className="col-5">
                 <div className="heads">
                   <h4>Trophies</h4>
@@ -43,7 +43,7 @@ export default function Dashboard() {
 
           {/* match */}
           <div className="col-md-4 my-2 p-3">
-            <div className="cards text-white  bg-primary rounded-x p-3 row m-0">
+            <div className="cards text-white  bg-primary rounded-x py-5 shadow p-3 row m-0">
               <div className="col-5">
                 <div className="heads">
                   <h4>Matches</h4>
@@ -57,6 +57,10 @@ export default function Dashboard() {
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="fix-match bg-primary text-white shadow  p-3">
+          +
         </div>
       </div>
     </>

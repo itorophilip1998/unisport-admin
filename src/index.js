@@ -13,7 +13,7 @@ render(
       <div className="col-md-3 col-lg-2 d-none p-0 d-md-block">
         <Sidebar />
       </div>
-      <div className="col-md-9  mx-auto d-none d-md-block shadow border rounded-x my-4">
+      <div className="col-md-9  mx-auto d-none d-md-block shadow bg-light border rounded-x my-4">
         <Routes>
           <Route path="/" element={<Dashboard />} />
         </Routes>
