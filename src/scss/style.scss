@@ -1,0 +1,124 @@
+/*
+	Template Name: Varsity
+	Author : MarkUps.io
+	Author URI: http://www.markups.io/
+	Version: 1.0
+
+*/
+
+
+/* BASE - Base tyles, Variables, Mixins, etc. */
+
+
+@import 'base/_variables.scss';
+@import 'base/_mixins.scss';
+@import 'base/_base.scss';
+
+/* MODULES - Individual site components */
+
+@import 'modules/_typography.scss';
+@import 'modules/_buttons.scss';
+
+
+
+/* LAYOUTS - Page layout styles */
+
+
+
+/*==================
+ HEADER SECTION
+====================*/
+
+@import 'layouts/_header.scss';
+
+/*==================
+ NAVBAR SECTION
+====================*/
+
+@import 'layouts/_nav.scss';
+
+/* ALL SECTION */
+
+@import 'modules/_sections.scss';
+
+/*==================
+ FOOTER
+====================*/
+
+@import 'layouts/_footer.scss';
+
+/*==================
+ THEME COLOR
+====================*/
+@import 'modules/_theme-color.scss';
+
+/*==================
+ RESPONSIVE DESIGN
+====================*/
+
+@import 'modules/_responsive.scss';
+
+
+// body{
+// 	background-color: black !important;
+// }
+.navbar-brand,.navlogo{
+    font-size: 15px!important;
+	    margin-top: -10px;
+	 font-weight: bold;
+
+	img{
+	width: 60px;
+	    display: inline; 
+	}
+}
+
+@media (max-width: 991px){
+.d-sm-none{
+	display: none !important;
+}
+.d-sm-block{
+	display: inline !important;
+}
+}
+@media (min-width: 991px){
+.d-md-none{
+	display: none !important;
+}
+
+}
+#mu-slider .mu-slider-single .mu-slider-img { 
+    height: 100vh;
+}
+
+.rounded-x{
+	border-radius: 5px;
+}
+
+.shadow{
+	box-shadow: 5px 5px 5px rgb(224, 219, 219);
+}
+.btn-primary{
+	background-color: #01bafd;
+}
+p>label{
+ font-weight: normal !important;
+}
+.loading{
+	background-color: rgba(0,0,0,0.8);
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: fixed;
+	z-index: 155 !important;
+	height: 100vh;
+	width: 100%;
+	text-align: center;
+	padding-top: 40vh ;
+}
+
+.loadinImg{ 
+	color: #01bafd;
+
+}
