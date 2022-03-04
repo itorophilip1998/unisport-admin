@@ -1,8 +1,29 @@
-import React from "react"; 
-// import {  Link } from "react-router-dom";
-    /* eslint-disable */
+import axios from "axios";
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+/* eslint-disable */
 
 export default function Dashboard() {
+  const [games, setGames] = useState([]);
+  const [matches, setMatches] = useState([]);
+
+  useEffect(() => {
+    const get = async () => {
+      try {
+        await axios
+          .get("https://unisport-api.herokuapp.com/api/view-match")
+          .then((res) => {
+            setGames(res.data.games);
+            setMatches(res.data.matches);
+          });
+      } catch (error) {}
+    };
+    get();
+  }, []);
+
+  if (localStorage.getItem("token")) {
+    location.href = "/login";
+  }
 
   return (
     <>
@@ -13,10 +34,10 @@ export default function Dashboard() {
             <div className="cards text-white  bg-success rounded-x shadow p-3 py-5 row m-0">
               <div className="col-5">
                 <div className="heads ">
-                  <h4>Users</h4>
+                  <h4>Schools</h4>
                 </div>
                 <div className="body">
-                  <h6>22</h6>
+                  <h6>{games.length}</h6>
                 </div>
               </div>
               <div className="col-6 text-right">
@@ -50,7 +71,7 @@ export default function Dashboard() {
                   <h4>Matches</h4>
                 </div>
                 <div className="body">
-                  <h6>400</h6>
+                  <h6> 0 </h6>
                 </div>
               </div>
               <div className="col-6 text-right">
@@ -60,8 +81,29 @@ export default function Dashboard() {
           </div>
         </div>
 
+        <hr />
+        <div className="users mt-4 row m-0">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbPb9dJ2sfWtx7Hr7vykG3wyTYLN4poEME6Q&usqp=CAU"
+            alt=""
+            className="col-lg-5"
+          />
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEcm74u-tkvf_et4UeViEwFLgGmdC08Q6UxQ&usqp=CAU"
+            alt="col-lg-5"
+          />
+          <div className="col-lg-2 text-muted">
+            <h6>
+              <i class="fa fa-user-circle" aria-hidden="true"></i> Admin
+            </h6>
+            <p className="mt-4">Unipsort@admin.com</p>
+          </div>
+        </div>
+
         <div className="fix-match bg-primary text-white shadow  p-3">
-          +
+          <Link to="/set-match" className="text-white ">
+            +
+          </Link>
         </div>
       </div>
     </>

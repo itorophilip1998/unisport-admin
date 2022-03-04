@@ -25,7 +25,7 @@ export default function Sidebar() {
             </Link>
           </li>
           <li className="list-item ">
-            <Link className="list-link" to="/login">
+            <Link className="list-link" to="/login" >
               <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
             </Link>
           </li>

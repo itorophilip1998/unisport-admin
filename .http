@@ -1,0 +1,54 @@
+@baseUrl = https://unisport-api.herokuapp.com/api
+
+### Signup 
+POST {{baseUrl}}/signup HTTP/1.1 
+
+### Signin 
+POST {{baseUrl}}/signin HTTP/1.1 
+content-type: application/json 
+
+{ 
+  "email": "unisport@admin.com",
+  "password": "admin"
+}
+
+### get Admin
+GET {{baseUrl}}/me HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.dW5pc3BvcnRAYWRtaW4uY29t.G5UwVzb0xvsftL8HwlbklUM2f4xHkBVD8BqKBzQc2hM
+
+
+### get
+DELETE  {{baseUrl}}/signout HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.dW5pc3BvcnRAYWRtaW4uY29t.G5UwVzb0xvsftL8HwlbklUM2f4xHkBVD8BqKBzQc2hM
+
+
+
+
+
+
+### registeer games 
+POST {{baseUrl}}/register HTTP/1.1
+content-type: application/json 
+
+{ 
+       "school_name": "Uninuyo",
+        "state": "Akwa Ibom",
+        "year": 431111,
+        "game_master":"Itoro",
+        "game_master_email":"itoro@gmail.com",
+        "game_master_phone":"09024195493"
+}
+
+
+### get
+GET {{baseUrl}}/view-match HTTP/1.1
+
+### get
+POST  {{baseUrl}}/set-match HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.dW5pc3BvcnRAYWRtaW4uY29t.G5UwVzb0xvsftL8HwlbklUM2f4xHkBVD8BqKBzQc2hM
+content-type: application/json 
+
+{ 
+    "home": "Unilag",
+    "away": "Uniuyo"
+}

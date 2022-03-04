@@ -1,7 +1,7 @@
-import React, { useState } from "react";  
+import React, { useState } from "react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css"; 
+import "react-toastify/dist/ReactToastify.css";
 /* eslint-disable */
 
 export default function Login() {
@@ -9,19 +9,23 @@ export default function Login() {
     email: "",
     password: "",
   });
+      localStorage.clear();
+    
   const [loading, setLoading] = useState(false);
-  const login = async(e) => {
-    e.preventDefault();
-    setLoading(true);
-   await axios
-      .post("https://unisport-api.herokuapp.com/api/signin",Data)
-       .then((res) => {
-          console.log(res)
+  const login = async (e) => {
+      e.preventDefault();
+    await axios
+      .post("https://unisport-api.herokuapp.com/api/signin", Data)
+        .then((res) => { 
+           localStorage.setItem('token',res.data.token)
+            localStorage.setItem('user', JSON.stringify(res.data.user))
+            location.href="/dashboard"
         setLoading(false);
         toast(`Login Successfully 👍`);
       })
       .catch((err) => {
-          setLoading(false);
+        console.log(err);
+        setLoading(false);
         toast(`Unauthorize`);
       });
   };

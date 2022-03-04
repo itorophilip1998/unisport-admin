@@ -4,6 +4,7 @@ import Sidebar from "./layouts/Sidebar";
 import { Header } from "./layouts/Header";
 import Dashboard from "./views/Dashboard"; 
 import Login from "./views/Login";
+import SetMatch from "./views/SetMatch";
 const rootElement = document.getElementById("root");
     /* eslint-disable */ 
 render(
@@ -18,6 +19,7 @@ render(
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route exact path="/login" element={<Login />} />
+          <Route exact path="/set-match" element={<SetMatch/>} />
         </Routes>
       </div>
     </div>
