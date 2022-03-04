@@ -10,19 +10,19 @@ export default function Login() {
     password: "",
   });
   const [loading, setLoading] = useState(false);
-  const login = (e) => {
+  const login = async(e) => {
     e.preventDefault();
     setLoading(true);
-    axios
-      .post("https://unisport-api.herokuapp.com/api/signin", Data)
-      .then((result) => {
+   await axios
+      .post("https://unisport-api.herokuapp.com/api/signin",Data)
+       .then((res) => {
+          console.log(res)
         setLoading(false);
         toast(`Login Successfully 👍`);
       })
       .catch((err) => {
           setLoading(false);
         toast(`Unauthorize`);
-          
       });
   };
   const loadingFunc = () => {
@@ -62,7 +62,7 @@ export default function Login() {
                   onChange={(e) =>
                     setData({
                       ...Data,
-                      school_name: e.target.value,
+                      email: e.target.value,
                     })
                   }
                 />
