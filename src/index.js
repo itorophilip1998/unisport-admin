@@ -3,11 +3,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Sidebar from "./layouts/Sidebar";
 import { Header } from "./layouts/Header";
 import Dashboard from "./views/Dashboard"; 
+import Login from "./views/Login";
 const rootElement = document.getElementById("root");
     /* eslint-disable */ 
 render(
   <BrowserRouter>
-    <Header   />
+    <Header />
 
     <div className="row m-0">
       <div className="col-md-3 col-lg-2 d-none p-0 d-md-block">
@@ -16,6 +17,7 @@ render(
       <div className="col-md-9  mx-auto d-none d-md-block shadow bg-light border rounded-x my-4">
         <Routes>
           <Route path="/" element={<Dashboard />} />
+          <Route exact path="/login" element={<Login />} />
         </Routes>
       </div>
     </div>

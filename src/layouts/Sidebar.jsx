@@ -11,7 +11,7 @@ export default function Sidebar() {
         <ul className="p-0 py-1">
           <li className="list-item ">
             <Link className="list-link" to="/">
-              <i class="fa fa-dashboard" aria-hidden="true"></i> Dashboard
+              <i class="fa fa-dashboard " aria-hidden="true"></i> Dashboard
             </Link>
           </li>
           <li className="list-item ">
